@@ -1,14 +1,14 @@
 
 :root {
+    /* #region ========== FONTS */
+        --default: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* #endregion ======= FONTS END */
+    
     /* #region ========== THEME */
         color-scheme: light;
         --txt-theme: light-dark(var(--black), var(--white));
         --bg-theme: light-dark(var(--white), var(--black));
     /* #endregion ======= THEME END */
-
-    /* #region ========== FONTS */
-        --default: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* #endregion ======= FONTS END */
 
     /* #region ========== WARNA */
         --primary: light-dark(#29b765, #2ECC71);
@@ -18,6 +18,13 @@
         --grey: #676767;
         --border: #e1e1e1;
     /* #endregion ======= WARNA END*/
+
+    /* #region ========== TOMBOL */
+        --btn-custom-color: var(--white);
+        --btn-custom-bg-color: #20b960;
+        --btn-custom-bg-color-hover: #118a43;
+        --btn-custom-bg-color-focus: #118a43;
+    /* #endregion ======= TOMBOL END*/
 
     /* #region ========== MIX */
         --max-page: 1350px;

@@ -154,7 +154,7 @@
                 font-weight: 800;
                 text-transform: capitalize;
                 transition: var(--anim);
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
             }
             & div {
                 display: flex;
@@ -172,7 +172,7 @@
     .wrap-particles {
         position: absolute;
         inset: 0;
-        opacity: .35;
+        opacity: .4;
         user-select: none;
 
         & #tsparticles {
