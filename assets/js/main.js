@@ -30,6 +30,7 @@
     const warna = '#29b765';
 
     tsParticles.load("tsparticles", {
+        autoPlay: true,
         background: {
             color: {
                 value: 'var(--bg-theme)'
@@ -39,11 +40,11 @@
         interactivity: {
             events: {
                 onClick: {
-                    enable: true,
+                    enable: false,
                     mode: 'push'
                 },
                 onHover: {
-                    enable: true,
+                    enable: false,
                     mode: 'grab'
                 },
             },
@@ -105,3 +106,38 @@
         detectRetina: true,
     });
 // #endregion ======= PARTICLES END
+
+// #region ========== SCROLLSPY 
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll(".section");
+        const navLi = document.querySelectorAll("nav ul li a");
+
+        // Restore active class from localStorage
+        const activeSection = localStorage.getItem("activeSection");
+        if (activeSection) {
+            document.querySelector(`nav ul li a[href="#${activeSection}"]`).classList.add("active");
+            document.getElementById(activeSection).scrollIntoView();
+        }
+
+        window.onscroll = () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 60) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").substring(1) === current) {
+                    a.classList.add("active");
+                    // Save current active section to localStorage
+                    localStorage.setItem("activeSection", current);
+                }
+            });
+        };
+    });
+
+// #endregion ======= SCROLLSPY END

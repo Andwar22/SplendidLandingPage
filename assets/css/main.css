@@ -1,11 +1,14 @@
-@import url(/assets/css/variables.css);
-@import url(/assets/css/responsive.css);
+@import '/assets/css/variables.css';
+@import '/assets/css/responsive.css';
 
 /* #region ========== DEFAULT */
   *,
   ::before,
   ::after {
     box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     color: var(--txt-theme);
@@ -23,6 +26,7 @@
   }
   .container {
     width: 100%;
+    height: 100%;
     max-width: var(--max-page);
     padding-inline: calc(var(--padding-page-x) * .5);
     margin-inline: auto;
@@ -59,7 +63,6 @@
         z-index: 999;
 
         & .bg-nav {
-            content: '';
             position: absolute;
             inset: 0;
             background-color: var(--primary);
@@ -70,24 +73,29 @@
             justify-content: space-between;
             align-items: center;
             gap: 2rem;
-            padding-block: calc(var(--padding-page-x) * .4);
+            padding-block: calc(var(--padding-page-x) * .5);
 
             & .brand {
                 display: flex;
                 align-items: center;
-                gap: 1rem;
 
-                & img {
-                    width: 40px;
-                    height: auto;
-                }
-                & span {
-                    display: block;
-                    color: var(--txt-theme);
-                    font-size: 1.75rem;
-                    font-weight: 700;
-                    font-style: italic;
-                    text-transform: uppercase;
+                & a {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    text-decoration: none;
+                    
+                    & img {
+                        width: 40px;
+                        height: auto;
+                    }
+                    & span {
+                        display: block;
+                        color: var(--txt-theme);
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                    }
                 }
             }
 
@@ -95,24 +103,39 @@
                 flex: 1;
                 display: flex;
                 justify-content: flex-end;
-                gap: 5%;
+                align-items: center;
+                gap: 3rem;
 
                 & .list-menu {
                     display: flex;
                     align-items: center;
-                    gap: 2rem;
+                    gap: 1.5rem;
                     padding: 0;
                     margin: 0;
                     list-style: none;
                     
                     & .item-menu {
+                        padding: .5rem;
+                        
                         & a {
-                            font-weight: 600;
                             color: var(--txt-theme);
+                            font-size: 1rem;
+                            font-weight: 400;
                             text-decoration: none;
+                            transition: var(--anim);
+
+                            &:hover,
+                            &.active {
+                                color: var(--primary);
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
+            }
+
+            & .toggle-dark {
+                display: none;
             }
         }
     }
@@ -126,7 +149,7 @@
         align-items: center;
         width: 100%;
         height: 100vh;
-        padding-top: 2rem;
+        padding-top: 3rem;
         background-color: var(--bg-theme);
         transition: var(--anim);
 
@@ -143,26 +166,55 @@
             z-index: 2;
         }
 
-        & .text {
-            position: relative;
-            width: fit-content;
-            pointer-events: none;
+        & .wrap-hero {
+            display: grid;
+            grid-template-columns: auto 50%;
+            align-items: center;
+            height: 100%;
 
-            & p {
-                color: var(--txt-theme);
-                font-size: 4rem;
-                font-weight: 800;
-                text-transform: capitalize;
-                transition: var(--anim);
-                margin-bottom: 3rem;
-            }
-            & div {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
+            & .text {
+                position: relative;
                 width: fit-content;
-                pointer-events: all;
-                z-index: 5;
+    
+                & p:first-child {
+                    color: var(--txt-theme);
+                    font-size: 3.75rem;
+                    font-weight: 800;
+                    text-transform: capitalize;
+                    transition: var(--anim);
+                    margin-bottom: 1rem;
+                }
+                & p:nth-of-type(2) {
+                    color: var(--txt-theme);
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    line-height: 1.75;
+                    transition: var(--anim);
+                    margin-bottom: 3rem;
+                }
+                & div {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    width: fit-content;
+                    z-index: 5;
+                }
+            }
+    
+            & .img-hero {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-image: url(/assets/images/hero/hero.png);
+                    background-position: left center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
             }
         }
     }
@@ -172,7 +224,7 @@
     .wrap-particles {
         position: absolute;
         inset: 0;
-        opacity: .4;
+        opacity: .3;
         user-select: none;
 
         & #tsparticles {

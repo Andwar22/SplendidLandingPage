@@ -2,64 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/assets/images/public/favicon.ico">
+    <link rel="icon" href="assets/images/public/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splendid Team</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>We Are Splendid</title>
+    <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Andwar22/CrumbsUI/dist/1.0.1/crumbs-ui.css">
 </head>
 <body>
-    <section id="navbar">
+    <nav id="navbar">
         <!-- <div class="bg-nav"></div> -->
         <div class="container">
             <div class="wrap">
                 <div class="brand">
-                    <img src="/assets/images/public/nav-brand.png" alt="logo">
-                    <span>Zorojuro</span>
+                    <a href="#">
+                        <img src="/assets/images/public/nav-brand.png" alt="logo">
+                        <span>Splendid Team</span>
+                    </a>
                 </div>
 
                 <div class="menus">
                     <ul class="list-menu">
                         <li class="item-menu">
-                            <a href="">Menu</a>
+                            <a href="#satu">Menu</a>
                         </li>
                         <li class="item-menu">
-                            <a href="">Menu</a>
+                            <a href="#dua">Menu</a>
                         </li>
                         <li class="item-menu">
-                            <a href="">Menu</a>
-                        </li>
-                        <li class="item-menu">
-                            <a href="">Menu</a>
+                            <a href="#tiga">Menu</a>
                         </li>
                     </ul>
-                    <!-- <div class="toggle-dark">
+                    <div class="toggle-dark">
                         <label>
                             <input type="checkbox" id="toggleDarkMode" @change="toggleDarkMode" :checked="isDarkMode">
                             <span>Click</span>
                         </label>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
     
-    <section id="hero">
+    <div id="hero">
         <div class="wrap-particles">
             <div id="tsparticles"></div>
         </div>
         <div class="container">
-            <div class="text">
-                <p>Make your dreams<br>comes true</p>
-                <div>
-                    <button class="cr-btn cr-default cr-big">Explore More</button>
-                    <button class="cr-btn cr-outline-default cr-big">Get in touch</button>
+            <div class="wrap-hero">
+                <div class="text">
+                    <p>make your business<br>more flexible</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla deleniti unde consectetur quae error. Accusantium non sapiente delectus?</p>
+                    <div>
+                        <button class="cr-btn cr-default cr-big">Explore More</button>
+                        <button class="cr-btn cr-outline-default cr-big">Get in touch</button>
+                    </div>
                 </div>
+                <div class="img-hero"></div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section></section>
+    <div id="satu" class="section" style="height: 100vh;"></div>
+    <div id="dua" class="section" style="height: 100vh;"></div>
+    <div id="tiga" class="section" style="height: 100vh;"></div>
     
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.16.2/dist/tsparticles.min.js" integrity="sha256-2Sly/Hf9UP7YBu6LEPpn/6rxMZR5EeGq89mBa4G5+YA=" crossorigin="anonymous"></script>
     <script src="/assets/js/main.js"></script>
