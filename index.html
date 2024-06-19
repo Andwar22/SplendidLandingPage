@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/assets/images/public/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splendid Team</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Andwar22/CrumbsUI/dist/1.0.1/crumbs-ui.css">
+</head>
+<body>
+    <section id="navbar">
+        <div class="bg-nav"></div>
+        <div class="container">
+            <div class="wrap">
+                <div class="brand">
+                    <img src="/assets/images/public/nav-brand.png" alt="logo">
+                    <span>Zorojuro</span>
+                </div>
+
+                <div class="menus">
+                    <ul class="list-menu">
+                        <li class="item-menu">
+                            <a href="">Menu</a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">Menu</a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">Menu</a>
+                        </li>
+                        <li class="item-menu">
+                            <a href="">Menu</a>
+                        </li>
+                    </ul>
+                    <div class="toggle-dark">
+                        <label>
+                            <input type="checkbox" id="toggleDarkMode" @change="toggleDarkMode" :checked="isDarkMode">
+                            <span>Click</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="hero">
+        <div class="wrap-particles">
+            <!-- <Particles /> -->
+        </div>
+        <div class="container">
+            <div class="text">
+                <p>Make your dreams<br>comes true</p>
+                <div>
+                    <button class="cr-btn cr-success cr-big">Explore More</button>
+                    <button class="cr-btn cr-outline-success cr-big">hubungi kami</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Andwar22/CrumbsUI/dist/1.0.1/crumbs-ui.js"></script>
+</body>
+</html>
